@@ -1,0 +1,165 @@
+// === MENU ===
+
+/* The side navigation menu */
+
+.admin-bar .sidenav {
+    top: 24px;
+    height: calc(100% - 24px);
+}
+
+#masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include padding(30px 10px);
+    @media (#{$bp-larger-than-phablet}) {
+        @include padding(30px);
+    }
+    width: 100%;
+    z-index: 10;
+    &:not(.sticky) {
+        position: absolute;
+    }
+    &.sticky {
+        position: fixed;
+        background: $primary-color;
+        @extend .plx_shadow;
+    }
+    .site-branding {
+        width: 50%;
+        @media (#{$bp-larger-than-phablet}) {
+            width: 30%;
+        }
+    }
+    li.plx_menu_last {
+        background: $secondary-color;
+        a {
+            color: $primary-color;
+        }
+        @extend .mtv_transition;
+    }
+    li.plx_menu_last:hover {
+        background: $quaternary-color;
+        a {
+            color: $secondary-color;
+        }
+    }
+    #site-navigation {
+        width: 50%;
+        @media (#{$bp-larger-than-phablet}) {
+            width: 70%;
+        }
+        .menu-toggle {
+            display: none;
+        }
+        #primary-menu {
+            display: none;
+            float: right;
+            li {
+                &.plx_menu_last {
+                    @include margin(null null null 10px);
+                }
+                margin-bottom: 0;
+                @include padding(10px);
+                a {
+                    text-transform: uppercase;
+                    font-family: $menu-font;
+                    font-size: 16px;
+                }
+            }
+            @media (#{$bp-larger-than-desktop}) {
+                display: block;
+            }
+        }
+    }
+    .mobile_menu {
+        display: block;
+        @media (#{$bp-larger-than-desktop}) {
+            display: none;
+            #site-navigation-mobile {
+                display: none;
+            }
+        }
+        #sidebar_menu {
+            div.menu_enable {
+                display: flex;
+                align-items: center;
+                .triangle-menu {
+                    padding-left: 7px;
+                    font-size: 0.7rem;
+                }
+            }
+        }
+        #site-navigation-mobile {
+            height: 100%;
+            /* 100% Full-height */
+            width: 0;
+            /* 0 width - change this with JavaScript */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Stay on top */
+            top: 0;
+            right: 0;
+            background-color: $primary-color;
+            /* Black*/
+            overflow-x: hidden;
+            /* Disable horizontal scroll */
+            padding-top: 60px;
+            /* Place content 60px from the top */
+            transition: 0.5s;
+            /* 0.5 second transition effect to slide in the sidenav */
+            //display: none;
+            #mobile-menu {
+                margin: auto;
+                li {
+                    list-style: none;
+                    width: 100%;
+                    margin: 0rem auto 1.0rem auto;
+                    max-width: 300px;
+                    /* The navigation menu links */
+                    a {
+                        text-decoration: none;
+                        font-size: 25px;
+                        display: block;
+                        transition: 0.3s;
+                        color: $tertiary-color;
+                        text-align: center;
+                        font-weight: 600 !important;
+                        text-transform: lowercase;
+                        &:hover {
+                            color: $secondary-color;
+                        }
+                    }
+                }
+            }
+            li.current-menu-item a {
+                color: $secondary-color;
+            }
+            /* When you mouse over the navigation links, change their color */
+            .widgets_area {
+                @include margin(100px 0 0 0);
+                width: 100%;
+                @extend .mtv_center;
+                .mtv_flex {
+                    justify-content: space-around;
+                    >div {
+                        width: 100%;
+                        @media (#{$bp-larger-than-phablet}) {
+                            width: 33.33%;
+                        }
+                    }
+                }
+            }
+            /* Position and style the close button (top right corner) */
+            .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: $standard-font-size * 1.8;
+                margin-left: 50px;
+                padding: 8px 8px 8px 32px;
+            }
+        }
+    }
+}

@@ -1,0 +1,166 @@
+    // === HOME PAGE ===
+    .home .entry-content {
+        margin: 0;
+    }
+    /*Grid */
+
+    .plx_grid {
+        h4 {
+            margin-bottom: 0;
+        }
+        .plx_grid_item {
+            width: 100%;
+            @include padding(null 30px);
+            a:not(.mtv_button) {
+                color: $tertiary-color;
+            }
+            .style_1 {
+                height: 450px;
+                .img_wrapper {
+                    height: 30%;
+                }
+            }
+            .style_2 {
+                @include padding(null null 80px null);
+                height: 500px;
+                .img_wrapper {
+                    height: 40%;
+                    background: $quaternary-color;
+                    .img_wrap {
+                        height: 100%;
+                        &:hover {
+                            @extend .plx_opac;
+                        }
+                    }
+                }
+            }
+        }
+        @media (#{$bp-larger-than-tablet}) {
+            .plx_grid_item {
+                width: 33.33%;
+            }
+        }
+        @media (#{$bp-larger-than-tablet}) {
+            .plx_grid_item {
+                width: 33.33%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1300px) and (min-width: 1001px) {
+        .page-template-default_sidebar_template .plx_grid_item {
+            width: 50%;
+        }
+    }
+    /*Hero Section*/
+
+    .plx_hero_wrap {
+        background: $primary-color;
+        position: relative;
+        &.plx_hero_img_wrap {
+            height: 320px;
+            @media (#{$bp-larger-than-tablet}) {
+                height: 400px;
+            }
+            img {
+                opacity: 0.2;
+            }
+        }
+        .plx_header {
+            max-height: 100vh;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            height: 100%; // @include background(linear-gradient(transparent, darken($primary-color, 10%), $primary-color, $primary-color ) left repeat);
+            &::before {
+                //content: 'ddd';
+            }
+            &::after {
+                //content: 'fff';
+            }
+            &.plx_home_video_container {
+                position: relative;
+                height: 380px;
+                video {
+                    @extend .cover;
+                    opacity: 0.2;
+                }
+                @media (#{$bp-larger-than-phablet}) {
+                    height: 450px;
+                }
+                @media (#{$bp-larger-than-tablet}) {
+                    height: 550px;
+                }
+                @media (#{$bp-larger-than-desktop}) {
+                    height: 100vh;
+                }
+            }
+            .hero_text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 80%;
+                transform: translateX(-50%) translateY(-50%);
+                h5 {
+                    color: $secondary-color;
+                }
+            }
+            .scroll_4_more {
+                position: absolute;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+    /*Pages preview masonry style*/
+
+    .plx_preview {
+        a {
+            color: $secondary-link-color;
+        }
+        .plx_preview_img_wrap {
+            background: lighten($primary-color, 40%);
+            .plx_preview_img {
+                @extend .plx_opac;
+            }
+        }
+        @media (#{$bp-larger-than-phablet}) {
+            .left .plx_preview_title {
+                left: -60px;
+            }
+            .right .plx_preview_title {
+                right: -60px;
+            }
+            .right .plx_preview_text {
+                text-align: right;
+            }
+            .left .plx_preview_text {
+                @include margin(50px null null 50px);
+            }
+            .right .plx_preview_text {
+                @include margin(50px 50px null null);
+            }
+            height: 450px;
+            .plx_img_preview_container {
+                height: 100%;
+            }
+            .plx_preview_title {
+                position: absolute;
+                top: 10%;
+                z-index: 1;
+            }
+        }
+        @media screen and (max-width: 549px) {
+            .plx_img_preview_container {
+                order: 1;
+                @include margin(50px null null null);
+                height: 250px;
+            }
+            .plx_preview_text_container {
+                order: 2;
+                padding: 0 20px;
+                @include margin(50px null null null);
+            }
+        }
+    }

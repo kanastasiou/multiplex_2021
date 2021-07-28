@@ -1,0 +1,308 @@
+@import '_variables';
+@import "bourbon/bourbon";
+body {
+    font-family: $text-font;
+    font-size: $standard-font-size;
+    color: $tertiary-color;
+    a {
+        color: $link-color;
+        text-decoration: none;
+    }
+    a:hover:not(.mtv_button) {
+        color: $link-color-hover !important;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $headline-font;
+    }
+    h1>a:hover,
+    h2>a:hover,
+    h3>a:hover,
+    h4>a:hover,
+    h5>a:hover,
+    h6>a:hover,
+    .plx_preview_title .mtv_center h2:hover {
+        color: $link-color-hover;
+    }
+    h2 {
+        font-weight: 700;
+    }
+    h2.widget-title {
+        font-weight: 400;
+        font-family: $medium-headline-font;
+    }
+    h5,
+    h6 {
+        font-family: $medium-headline-font;
+    }
+    .mtv_3_3 {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        .mtv_1_3 {
+            display: inline-block;
+        }
+        .mtv_2_3 {
+            display: inline-block;
+        }
+    }
+    .mtv_2_col {
+        width: 100%;
+    }
+    h1 {
+        font-size: $standard-font-size * 1.8;
+    }
+    h2:not(.widget-title) {
+        font-size: $standard-font-size * 1.6;
+    }
+    @media (#{$bp-larger-than-mobile}) {
+        .mtv_2_col {
+            width: 50%;
+        }
+    }
+    @media (#{$bp-larger-than-tablet}) {
+        h1 {
+            font-size: $standard-font-size * 3.2;
+        }
+        h2:not(.widget-title) {
+            font-size: $standard-font-size * 2.8;
+        }
+        h2.widget-title {
+            font-size: $standard-font-size * 2;
+        }
+        h4 {
+            font-size: $standard-font-size * 1.8;
+        }
+        h5 {
+            font-size: $standard-font-size * 1.5;
+        }
+        .mtv_1_3 {
+            width: 100%;
+        }
+        .mtv_2_3 {
+            width: 100%;
+        }
+    }
+    /* Sidebar */
+    #secondary {
+        h2.widget-title {
+            color: $secondary-color;
+        }
+        ul {
+            list-style-type: none;
+            a {
+                color: $tertiary-color;
+            }
+        }
+    }
+    @media (#{$bp-larger-than-phablet}) {
+        .mtv_2_col {
+            width: 33.33%;
+        }
+        .mtv_padding {
+            @include padding(0 30px);
+        }
+    }
+    @media (#{$bp-larger-than-desktop}) {
+        .mtv_1_3 {
+            width: 25%;
+        }
+        .mtv_2_3 {
+            width: 75%;
+            padding-right: 50px;
+        }
+        .mtv_padding {
+            @include padding(0 80px);
+        }
+        .mtv_2_col {
+            width: 33.33%;
+        }
+    }
+    @media (#{$bp-larger-than-desktophd}) {
+        .mtv_padding {
+            @include padding(0 80px);
+        }
+        .mtv_2_col {
+            width: 25%;
+        }
+    } // === FOOTER ===
+    .mtv_footer {
+        color: $secondary-color;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include margin(null 30px null 30px);
+        a {
+            color: $secondary-color;
+        }
+        a:hover {
+            color: $link-color-hover;
+        }
+        .right {
+            text-align: right;
+        }
+        .footer_logo {
+            text-align: center;
+        }
+        @media screen and (max-width: 900px) {
+            flex-wrap: wrap;
+            .four.columns {
+                width: 100%;
+                text-align: center;
+                @include margin(15px null);
+            }
+            .footer_logo {
+                order: 1;
+            }
+            .footer.left {
+                order: 2;
+            }
+            .footer.right {
+                order: 3;
+            }
+        }
+    }
+}
+
+// === ICONS === 
+@font-face {
+    font-family: 'multiplex';
+    src: url('#{$icomoon-font-path}/multiplex.eot?3zj8jp');
+    src: url('#{$icomoon-font-path}/multiplex.eot?3zj8jp#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/multiplex.ttf?3zj8jp') format('truetype'),
+    url('#{$icomoon-font-path}/multiplex.woff?3zj8jp') format('woff'),
+    url('#{$icomoon-font-path}/multiplex.svg?3zj8jp#multiplex') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'multiplex' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.mx_icon-settings {
+    &:before {
+        content: $mx_icon-settings;
+    }
+}
+
+.mx_icon-bubble {
+    &:before {
+        content: $mx_icon-bubble;
+    }
+}
+
+.mx_icon-head {
+    &:before {
+        content: $mx_icon-head;
+    }
+}
+
+.mx_icon-triangle {
+    &:before {
+        content: $mx_icon-triangle;
+    }
+}
+
+.h2 .icon.mx_icon-triangle {
+    font-size: 36px;
+}
+
+.h3 .icon.mx_icon-triangle {
+    font-size: 28px;
+}
+
+.plx_title_wrap {
+    @include margin(null null 30px null);
+    .plx_title {
+        &.h2 {
+            margin: auto;
+        }
+        @include margin(null null 30px null);
+        width: fit-content;
+        @extend .mtv_center;
+        h2,
+        h3 {
+            @include margin(null null 0 null);
+        }
+    }
+}
+
+.plx_title[data-span_color=yellow] .icon.mx_icon-triangle {
+    color: $secondary-color;
+}
+
+.plx_title[data-span_color=blue] .icon.mx_icon-triangle {
+    color: $quaternary-color;
+}
+
+.plx_title[data-color=white] {
+    color: $tertiary-color;
+}
+
+.plx_title[data-color=yellow] {
+    color: $secondary-color;
+}
+
+.plx_grid_icon span {
+    font-size: 120px;
+    color: $secondary-color;
+}
+
+footer#colophon.site-footer {
+    background-color: $primary-color;
+}
+
+.menu_enable {
+    color: $secondary-color;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    border-color: $secondary-color;
+    color: $secondary-color;
+    border-style: solid;
+    border-width: 2px;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 1.8rem;
+    height: auto !important;
+    font-weight: 400;
+    line-height: initial;
+    text-transform: unset;
+    border-radius: 0px;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+    background: $secondary-color;
+    color: $primary-color;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    transition-property: all;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+
+.fts-jal-fb-header a,
+.fts-jal-single-fb-post a {
+    font-family: lato-light;
+}

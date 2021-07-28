@@ -1,0 +1,32 @@
+//Media queries
+$bp-larger-than-mobile    : "min-width: 400px" !default;
+$bp-larger-than-phablet   : "min-width: 550px" !default;
+$bp-larger-than-tablet    : "min-width: 750px" !default;
+$bp-larger-than-desktop   : "min-width: 1000px" !default;
+$bp-larger-than-desktophd : "min-width: 1200px" !default;
+
+// Colors
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+$primary-color: #1c3144;
+$secondary-color: #f3c837;
+$tertiary-color: #fff;
+$quaternary-color: #005f9f;
+$link-color: #f3c837;
+$link-color-hover:#1eaedb;
+$secondary-link-color: #005f9f; 
+
+
+// === FONTS ===
+$headline-font: lato-black;
+$medium-headline-font: lato-light;
+$text-font: merriweather-light;
+$menu-font: merriweather-regular;
+$standard-font-size: 1.80rem;
+
+// === ICONS ===
+$icomoon-font-path: "fonts" !default;
+
+$mx_icon-settings: "\e900";
+$mx_icon-bubble: "\e901";
+$mx_icon-head: "\e902";
+$mx_icon-triangle: "\e903";

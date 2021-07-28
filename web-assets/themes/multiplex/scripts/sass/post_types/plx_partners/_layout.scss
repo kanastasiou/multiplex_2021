@@ -1,0 +1,98 @@
+    /*Partners Carousel Style*/
+
+.plx_partners_show_wrap {
+    &.mtv_partner_slick_wrap {
+        background: $quaternary-color;
+    }
+    .mtv_partner {
+        background: $tertiary-color;
+        .mtv_slick_item_wrap {
+            @include border-color($primary-color);
+            @extend .relative;
+            .mtv_slick_item {
+                height: 100%;
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+                img {
+                    margin: auto;
+                }
+                img:hover {
+                    height: 130%;
+                }
+            }
+            &.carousel {
+                height: 200px;
+                @include border-style(null null null solid);
+                @include border-width(null null null 1px);
+                @include padding(30px);
+                @media (#{$bp-larger-than-desktophd}) {
+                    img:hover {
+                        height: 180%;
+                    }
+                }
+            }
+                &.grid {
+                    @include padding(10px);
+                    height: 200px;
+                    @extend .over_hidden;
+                    @extend .mtv_flex;
+                    justify-content: center;
+                    &:nth-child(3n+1) {
+                        @include border-style(null null solid solid);
+                        @include border-width(null null 1px 1px);
+                    }
+                }
+            }
+        }
+    }
+    /* Partner Page*/
+    .plx_partner_main {
+        .partner_img_wrap {
+            background: $tertiary-color;
+            @extend .mtv_center;
+            max-width: 350px;
+            @include margin(auto auto 30px auto);
+        }
+        .wpcf7 {
+            background: lighten($primary-color, 10%);
+            max-width: 1000px;
+            @extend .plx_shadow;
+            form {
+                @include padding(30px);
+                input:not(.wpcf7-submit),
+                textarea {
+                    width: 100%;
+                    max-width: 1000px;
+                    @include border-top-radius(0);
+                    @include border-right-radius(0);
+                    @include border-bottom-radius(0);
+                    @include border-left-radius(0);
+                }
+                textarea {
+                    height: 250px;
+                }
+                input.wpcf7-submit {
+                    @include border-color($secondary-color);
+                    @include border-top-radius(0);
+                    @include border-right-radius(0);
+                    @include border-bottom-radius(0);
+                    @include border-left-radius(0);
+                    @include padding(0 30px);
+                    background: $secondary-color;
+                    color: $primary-color;
+                    @extend .mtv_transition;
+                    &:hover {
+                        @include border-color($quaternary-color);
+                        background: $quaternary-color;
+                        color: $secondary-color;
+                    }
+                }
+            }
+        }
+        @media (#{$bp-larger-than-phablet}) {
+            .partner_img_wrap {
+                @include margin(null 20px null 20px);
+            }
+        }
+    }
